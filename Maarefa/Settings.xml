@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  
+  <ServerName>.</ServerName>
+  <DBName>MAAREF</DBName>
+  <DBUserName>sa</DBUserName>
+  <DBPassword>Maaref2017</DBPassword>
+  <isRemembered>True</isRemembered>
+  <UserName>test</UserName>
+  <UserID></UserID>
+  <BranchID></BranchID>
+  <PC_IP></PC_IP>
+  
+</Settings>
+
