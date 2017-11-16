@@ -79,7 +79,6 @@ namespace maarefa
                         ToolStripButton tsb = new ToolStripButton(dr["OBJECT_NAME_AR"].ToString(), imglistMain.Images[Convert.ToInt16(dr["TOOLBAR_ICON"])], new EventHandler(Item_Click));
                         tsb.Name= dr["OBJECT_ID"].ToString();
                         tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                        //--------------
                         tsb.TextAlign = ContentAlignment.BottomCenter;
                         tsb.ImageAlign = ContentAlignment.MiddleCenter;
                         tsb.TextImageRelation = TextImageRelation.Overlay;
