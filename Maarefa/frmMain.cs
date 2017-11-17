@@ -123,7 +123,8 @@ namespace maarefa
         #region Events
         private void frmMain_Load(object sender, EventArgs e)
         {
-            DBHandlerSqlServer.Constring = "Persist Security Info=False;User ID=maarefa;Password=Te3eC5!4o~9F;Initial Catalog=maarefa;Server=mssql5.gear.host";
+            //DBHandlerSqlServer.Constring = "Persist Security Info=False;User ID=maarefa;Password=Te3eC5!4o~9F;Initial Catalog=maarefa;Server=mssql5.gear.host";
+            DBHandlerSqlServer.Constring = "Persist Security Info=False;Initial Catalog=maaref;Server=.;Integrated Security = SSPI;";
             //PopulateMenusandShortcuts();
             loadmenu();
 
