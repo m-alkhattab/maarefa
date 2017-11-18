@@ -23,13 +23,13 @@ namespace maarefa
         #region Variables
         clsManageMenus objManageMenus = new clsManageMenus();
         DataTable menutbl = new DataTable();
-
+        int mode = 0; //edit = 0 or new = 1
 
         #endregion
 
         #region Methods
         void loadParents()
-        {
+        { 
             menutbl = objManageMenus.GetMenuObjects();
             menutbl.PrimaryKey = new DataColumn[] { menutbl.Columns["OBJECT_ID"] };
             TreeNode root = new TreeNode();
@@ -79,29 +79,36 @@ namespace maarefa
         }
         private void treeVMenus_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            try
-            {
-                
-                DataRow dr = menutbl.Rows.Find(e.Node.Tag.ToString());
-                txtOBJECT_NAME_AR.Text = dr["OBJECT_NAME_AR"].ToString();
-                txtOBJECT_COMMAND.Text = dr["OBJECT_COMMAND"].ToString();
-                txtOBJECT_TYPE.Text = dr["OBJECT_TYPE"].ToString();
-                txtPARNT_OBJECT.Text = e.Node.Parent.Tag.ToString();
-                if (dr["SHOWTOOLBAR"].ToString() == "1")
+                if (e.Node.Text.ToString() == "/")
                 {
-                    chkbxSHOWTOOLBAR.Checked = true;
+                    txtOBJECT_NAME_AR.Text = "/";
+                    txtOBJECT_COMMAND.Text = "";
+                    txtOBJECT_TYPE.Text = "";
+                    txtPARNT_OBJECT.Text = "0";
+                
+                
                 }
                 else
                 {
-                    chkbxSHOWTOOLBAR.Checked = false;
+                    DataRow dr = menutbl.Rows.Find(e.Node.Tag.ToString());
+                    txtOBJECT_NAME_AR.Text = dr["OBJECT_NAME_AR"].ToString();
+                    txtOBJECT_COMMAND.Text = dr["OBJECT_COMMAND"].ToString();
+                    txtOBJECT_TYPE.Text = dr["OBJECT_TYPE"].ToString();
+                    txtPARNT_OBJECT.Text = dr["PARNT_OBJECT"].ToString();
+                    if (dr["SHOWTOOLBAR"].ToString() == "1")
+                    {
+                        chkbxSHOWTOOLBAR.Checked = true;
+                    }
+                    else
+                    {
+                        chkbxSHOWTOOLBAR.Checked = false;
 
+                    }
                 }
-            }
-            catch
-            { }
         }
         private void btnAddNode_Click(object sender, EventArgs e)
         {
+            mode = 1;
             txtOBJECT_COMMAND.Clear();
             txtOBJECT_COMMAND.Enabled = true;
             txtOBJECT_NAME_AR.Clear();
@@ -122,38 +129,43 @@ namespace maarefa
             chkbxSHOWTOOLBAR.Enabled = true;
             treeVMenus.Enabled = false;
             treeVMenus.Focus();
-            tbtnEditNode.Enabled = false;
         }
 
-        private void tbtnEditNode_CheckedChanged(object sender, EventArgs e)
-        {
-            if (tbtnEditNode.Checked == true)
-            {
-                txtOBJECT_COMMAND.Enabled = true;
-                txtOBJECT_NAME_AR.Enabled = true;
-                txtOBJECT_TYPE.Enabled = true;
-                chkbxSHOWTOOLBAR.Enabled = true;
-                treeVMenus.Enabled = false;
-
-            }
-            else
-            {
-                txtOBJECT_COMMAND.Enabled = false;
-                txtOBJECT_NAME_AR.Enabled = false;
-                txtOBJECT_TYPE.Enabled = false;
-                chkbxSHOWTOOLBAR.Enabled = false;
-                treeVMenus.Enabled = true;
-                treeVMenus.Focus();
-            }
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            objManageMenus.ObjectNameAR = txtOBJECT_NAME_AR.Text;
+            objManageMenus.OBJECTCOMMAND = txtOBJECT_COMMAND.Text;
+            objManageMenus.OBJECTTYPE = Convert.ToInt16(txtOBJECT_TYPE.Text);
+            if (treeVMenus.SelectedNode.Parent != null)
+            {
+                objManageMenus.PARNTOBJECT = Convert.ToInt16(treeVMenus.SelectedNode.Parent.Tag.ToString());
+            }
+            else
+            {
+                objManageMenus.PARNTOBJECT = 0;
+            }
+            objManageMenus.SHOWTOOLBAR = chkbxSHOWTOOLBAR.Checked ? 1 : 0;
+            objManageMenus.MENUICON = 0;
+            objManageMenus.TOOLBARICON = 0;
+            objManageMenus.CREATEUSER = 1;
+            objManageMenus.CREATEPC = "10.1.1.10";
+            //objManageMenus.CREATETIMESTAMP = DateTime.Now;
+            objManageMenus.TRANSSTATUS = 0;
+            objManageMenus.RECORDSTATUS = 0;
+            objManageMenus.InsertNewMenuItem();
+            txtOBJECT_COMMAND.Clear();
+            txtOBJECT_NAME_AR.Clear();
+            txtOBJECT_TYPE.Clear();
+            txtPARNT_OBJECT.Clear();
+            treeVMenus.Nodes.Clear();
+            loadParents();
+            treeVMenus.ExpandAll();
+            treeVMenus.Enabled = true;
+            treeVMenus.Focus();
+
 
         }
-
-        #endregion
-
         private void btnBrowseMenu_Click(object sender, EventArgs e)
         {
             int b = 0;
@@ -165,9 +177,29 @@ namespace maarefa
                 Image img = Image.FromFile(ofd.FileNames[z]);
                 string a = b.ToString();
                 //imageList1.Images.Add(a, img);
-                
+
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtOBJECT_COMMAND.Clear();
+            txtOBJECT_NAME_AR.Clear();
+            txtOBJECT_TYPE.Clear();
+            txtPARNT_OBJECT.Clear();
+            treeVMenus.Nodes.Clear();
+            loadParents();
+            treeVMenus.ExpandAll();
+            treeVMenus.Enabled = true;
+            treeVMenus.Focus();
+
+
+
+        }
+
+        #endregion
+
+       
 
       
 

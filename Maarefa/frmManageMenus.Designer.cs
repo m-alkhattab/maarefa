@@ -42,7 +42,6 @@
             this.txtOBJECT_COMMAND = new System.Windows.Forms.TextBox();
             this.chkbxSHOWTOOLBAR = new System.Windows.Forms.CheckBox();
             this.lblSHOWTOOLBAR = new System.Windows.Forms.Label();
-            this.tbtnEditNode = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblMenuImage = new System.Windows.Forms.Label();
@@ -96,7 +95,6 @@
             this.txtOBJECT_NAME_AR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_NAME_AR.Enabled = false;
             this.txtOBJECT_NAME_AR.Location = new System.Drawing.Point(12, 41);
             this.txtOBJECT_NAME_AR.Name = "txtOBJECT_NAME_AR";
             this.txtOBJECT_NAME_AR.Size = new System.Drawing.Size(273, 20);
@@ -150,7 +148,6 @@
             this.txtOBJECT_TYPE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_TYPE.Enabled = false;
             this.txtOBJECT_TYPE.Location = new System.Drawing.Point(12, 141);
             this.txtOBJECT_TYPE.Name = "txtOBJECT_TYPE";
             this.txtOBJECT_TYPE.Size = new System.Drawing.Size(273, 20);
@@ -172,7 +169,6 @@
             this.txtOBJECT_COMMAND.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_COMMAND.Enabled = false;
             this.txtOBJECT_COMMAND.Location = new System.Drawing.Point(12, 91);
             this.txtOBJECT_COMMAND.Name = "txtOBJECT_COMMAND";
             this.txtOBJECT_COMMAND.Size = new System.Drawing.Size(273, 20);
@@ -182,7 +178,6 @@
             // chkbxSHOWTOOLBAR
             // 
             this.chkbxSHOWTOOLBAR.AutoSize = true;
-            this.chkbxSHOWTOOLBAR.Enabled = false;
             this.chkbxSHOWTOOLBAR.Location = new System.Drawing.Point(270, 241);
             this.chkbxSHOWTOOLBAR.Name = "chkbxSHOWTOOLBAR";
             this.chkbxSHOWTOOLBAR.Size = new System.Drawing.Size(15, 14);
@@ -199,21 +194,9 @@
             this.lblSHOWTOOLBAR.TabIndex = 12;
             this.lblSHOWTOOLBAR.Text = "إظهار في شريط الاختصارات";
             // 
-            // tbtnEditNode
-            // 
-            this.tbtnEditNode.Appearance = System.Windows.Forms.Appearance.Button;
-            this.tbtnEditNode.Location = new System.Drawing.Point(317, 381);
-            this.tbtnEditNode.Name = "tbtnEditNode";
-            this.tbtnEditNode.Size = new System.Drawing.Size(104, 53);
-            this.tbtnEditNode.TabIndex = 13;
-            this.tbtnEditNode.Text = "تعديل";
-            this.tbtnEditNode.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tbtnEditNode.UseVisualStyleBackColor = true;
-            this.tbtnEditNode.CheckedChanged += new System.EventHandler(this.tbtnEditNode_CheckedChanged);
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(181, 381);
+            this.btnSave.Location = new System.Drawing.Point(269, 401);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 53);
             this.btnSave.TabIndex = 14;
@@ -224,13 +207,14 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(46, 381);
+            this.btnCancel.Location = new System.Drawing.Point(98, 401);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 53);
             this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "إلغاء";
+            this.btnCancel.Text = "تراجع";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblMenuImage
             // 
@@ -257,7 +241,6 @@
             this.txtShortcutImgPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtShortcutImgPath.Enabled = false;
             this.txtShortcutImgPath.Location = new System.Drawing.Point(76, 331);
             this.txtShortcutImgPath.Name = "txtShortcutImgPath";
             this.txtShortcutImgPath.Size = new System.Drawing.Size(209, 20);
@@ -269,7 +252,6 @@
             this.txtMenuImgPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMenuImgPath.Enabled = false;
             this.txtMenuImgPath.Location = new System.Drawing.Point(76, 282);
             this.txtMenuImgPath.Name = "txtMenuImgPath";
             this.txtMenuImgPath.Size = new System.Drawing.Size(209, 20);
@@ -310,7 +292,6 @@
             this.Controls.Add(this.lblMenuImage);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tbtnEditNode);
             this.Controls.Add(this.lblSHOWTOOLBAR);
             this.Controls.Add(this.chkbxSHOWTOOLBAR);
             this.Controls.Add(this.lblOBJECT_COMMAND);
@@ -348,7 +329,6 @@
         private System.Windows.Forms.TextBox txtOBJECT_COMMAND;
         private System.Windows.Forms.CheckBox chkbxSHOWTOOLBAR;
         private System.Windows.Forms.Label lblSHOWTOOLBAR;
-        private System.Windows.Forms.CheckBox tbtnEditNode;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblMenuImage;
