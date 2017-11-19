@@ -52,6 +52,15 @@
             this.btnBrowseShortcut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.Images.SetKeyName(0, "books-small.png");
+            this.imageList1.Images.SetKeyName(1, "books-startup.png");
+            this.imageList1.Images.SetKeyName(2, "icons8-cancel (1).png");
+            this.imageList1.Images.SetKeyName(3, "icons8-plus (1).png");
+            this.imageList1.Images.SetKeyName(4, "icons8-plus.png");
+            // 
             // treeVMenus
             // 
             this.treeVMenus.Anchor = System.Windows.Forms.AnchorStyles.None;

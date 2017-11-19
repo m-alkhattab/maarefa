@@ -11,7 +11,7 @@ using maarefa.Classes;
 
 namespace maarefa
 {
-    public partial class frmManageMenus : Form
+    public partial class frmManageMenus : frmParent
     {
         public frmManageMenus()
         {
@@ -158,17 +158,9 @@ namespace maarefa
         }
         private void btnBrowseMenu_Click(object sender, EventArgs e)
         {
-            int b = 0;
-            var ofd = new OpenFileDialog();
-            ofd.Multiselect = false;
-            ofd.ShowDialog();
-            for (int z = 0; z < ofd.FileNames.Length; z++)
-            {
-                Image img = Image.FromFile(ofd.FileNames[z]);
-                string a = b.ToString();
-                //imageList1.Images.Add(a, img);
+            txtMenuImgPath.Text = imageList1.Images.IndexOfKey(imageList1.Images.Keys[1]).ToString();
 
-            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

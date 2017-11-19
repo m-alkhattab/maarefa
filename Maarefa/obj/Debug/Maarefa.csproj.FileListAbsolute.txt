@@ -87,7 +87,6 @@ F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.exe
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.pdb
 F:\FreeLance\Maarefa\Maarefa\bin\Debug\maarefa.exe
 F:\FreeLance\Maarefa\Maarefa\bin\Debug\maarefa.pdb
-F:\FreeLance\Maarefa\Maarefa\obj\Debug\Maarefa.csprojResolveAssemblyReference.cache
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmDBSettings.resources
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmLogin2.resources
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmMain.resources
