@@ -46,10 +46,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblMenuImage = new System.Windows.Forms.Label();
             this.lblShortcutImage = new System.Windows.Forms.Label();
-            this.txtShortcutImgPath = new System.Windows.Forms.TextBox();
-            this.txtMenuImgPath = new System.Windows.Forms.TextBox();
-            this.btnBrowseMenu = new System.Windows.Forms.Button();
-            this.btnBrowseShortcut = new System.Windows.Forms.Button();
+            this.cmbMenuIcon = new System.Windows.Forms.ComboBox();
+            this.cmbShortcutIcon = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // imageList1
@@ -245,58 +243,29 @@
             this.lblShortcutImage.TabIndex = 17;
             this.lblShortcutImage.Text = "صورة شريط الاختصارات";
             // 
-            // txtShortcutImgPath
+            // cmbMenuIcon
             // 
-            this.txtShortcutImgPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtShortcutImgPath.Location = new System.Drawing.Point(76, 331);
-            this.txtShortcutImgPath.Name = "txtShortcutImgPath";
-            this.txtShortcutImgPath.Size = new System.Drawing.Size(209, 20);
-            this.txtShortcutImgPath.TabIndex = 18;
-            this.txtShortcutImgPath.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbMenuIcon.FormattingEnabled = true;
+            this.cmbMenuIcon.Location = new System.Drawing.Point(12, 280);
+            this.cmbMenuIcon.Name = "cmbMenuIcon";
+            this.cmbMenuIcon.Size = new System.Drawing.Size(272, 21);
+            this.cmbMenuIcon.TabIndex = 18;
             // 
-            // txtMenuImgPath
+            // cmbShortcutIcon
             // 
-            this.txtMenuImgPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMenuImgPath.Location = new System.Drawing.Point(76, 282);
-            this.txtMenuImgPath.Name = "txtMenuImgPath";
-            this.txtMenuImgPath.Size = new System.Drawing.Size(209, 20);
-            this.txtMenuImgPath.TabIndex = 19;
-            this.txtMenuImgPath.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnBrowseMenu
-            // 
-            this.btnBrowseMenu.Enabled = false;
-            this.btnBrowseMenu.Location = new System.Drawing.Point(12, 279);
-            this.btnBrowseMenu.Name = "btnBrowseMenu";
-            this.btnBrowseMenu.Size = new System.Drawing.Size(58, 23);
-            this.btnBrowseMenu.TabIndex = 20;
-            this.btnBrowseMenu.Text = "تصفح";
-            this.btnBrowseMenu.UseVisualStyleBackColor = true;
-            this.btnBrowseMenu.Click += new System.EventHandler(this.btnBrowseMenu_Click);
-            // 
-            // btnBrowseShortcut
-            // 
-            this.btnBrowseShortcut.Enabled = false;
-            this.btnBrowseShortcut.Location = new System.Drawing.Point(12, 329);
-            this.btnBrowseShortcut.Name = "btnBrowseShortcut";
-            this.btnBrowseShortcut.Size = new System.Drawing.Size(58, 23);
-            this.btnBrowseShortcut.TabIndex = 21;
-            this.btnBrowseShortcut.Text = "تصفح";
-            this.btnBrowseShortcut.UseVisualStyleBackColor = true;
+            this.cmbShortcutIcon.FormattingEnabled = true;
+            this.cmbShortcutIcon.Location = new System.Drawing.Point(12, 334);
+            this.cmbShortcutIcon.Name = "cmbShortcutIcon";
+            this.cmbShortcutIcon.Size = new System.Drawing.Size(272, 21);
+            this.cmbShortcutIcon.TabIndex = 19;
             // 
             // frmManageMenus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 472);
-            this.Controls.Add(this.btnBrowseShortcut);
-            this.Controls.Add(this.btnBrowseMenu);
-            this.Controls.Add(this.txtMenuImgPath);
-            this.Controls.Add(this.txtShortcutImgPath);
+            this.Controls.Add(this.cmbShortcutIcon);
+            this.Controls.Add(this.cmbMenuIcon);
             this.Controls.Add(this.lblShortcutImage);
             this.Controls.Add(this.lblMenuImage);
             this.Controls.Add(this.btnCancel);
@@ -342,9 +311,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblMenuImage;
         private System.Windows.Forms.Label lblShortcutImage;
-        private System.Windows.Forms.TextBox txtShortcutImgPath;
-        private System.Windows.Forms.TextBox txtMenuImgPath;
-        private System.Windows.Forms.Button btnBrowseMenu;
-        private System.Windows.Forms.Button btnBrowseShortcut;
+        private System.Windows.Forms.ComboBox cmbMenuIcon;
+        private System.Windows.Forms.ComboBox cmbShortcutIcon;
     }
 }
