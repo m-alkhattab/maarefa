@@ -121,10 +121,7 @@ namespace maarefa
             txtShortcutImgPath.Enabled = true;
             btnBrowseMenu.Enabled = true;
             btnBrowseShortcut.Enabled = true;
-            if (treeVMenus.SelectedNode.Parent != null)
-            { txtPARNT_OBJECT.Text = treeVMenus.SelectedNode.Parent.Tag.ToString(); }
-            else
-            { txtPARNT_OBJECT.Text = "0"; }
+            txtPARNT_OBJECT.Text = treeVMenus.SelectedNode.Tag.ToString();
             chkbxSHOWTOOLBAR.Checked = false;
             chkbxSHOWTOOLBAR.Enabled = true;
             treeVMenus.Enabled = false;
@@ -137,14 +134,7 @@ namespace maarefa
             objManageMenus.ObjectNameAR = txtOBJECT_NAME_AR.Text;
             objManageMenus.OBJECTCOMMAND = txtOBJECT_COMMAND.Text;
             objManageMenus.OBJECTTYPE = Convert.ToInt16(txtOBJECT_TYPE.Text);
-            if (treeVMenus.SelectedNode.Parent != null)
-            {
-                objManageMenus.PARNTOBJECT = Convert.ToInt16(treeVMenus.SelectedNode.Parent.Tag.ToString());
-            }
-            else
-            {
-                objManageMenus.PARNTOBJECT = 0;
-            }
+            objManageMenus.PARNTOBJECT = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
             objManageMenus.SHOWTOOLBAR = chkbxSHOWTOOLBAR.Checked ? 1 : 0;
             objManageMenus.MENUICON = 0;
             objManageMenus.TOOLBARICON = 0;

@@ -151,7 +151,7 @@
             this.txtOBJECT_TYPE.Location = new System.Drawing.Point(12, 141);
             this.txtOBJECT_TYPE.Name = "txtOBJECT_TYPE";
             this.txtOBJECT_TYPE.Size = new System.Drawing.Size(273, 20);
-            this.txtOBJECT_TYPE.TabIndex = 7;
+            this.txtOBJECT_TYPE.TabIndex = 5;
             this.txtOBJECT_TYPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblOBJECT_COMMAND
@@ -172,7 +172,7 @@
             this.txtOBJECT_COMMAND.Location = new System.Drawing.Point(12, 91);
             this.txtOBJECT_COMMAND.Name = "txtOBJECT_COMMAND";
             this.txtOBJECT_COMMAND.Size = new System.Drawing.Size(273, 20);
-            this.txtOBJECT_COMMAND.TabIndex = 9;
+            this.txtOBJECT_COMMAND.TabIndex = 4;
             this.txtOBJECT_COMMAND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chkbxSHOWTOOLBAR
@@ -181,7 +181,7 @@
             this.chkbxSHOWTOOLBAR.Location = new System.Drawing.Point(270, 241);
             this.chkbxSHOWTOOLBAR.Name = "chkbxSHOWTOOLBAR";
             this.chkbxSHOWTOOLBAR.Size = new System.Drawing.Size(15, 14);
-            this.chkbxSHOWTOOLBAR.TabIndex = 11;
+            this.chkbxSHOWTOOLBAR.TabIndex = 6;
             this.chkbxSHOWTOOLBAR.UseVisualStyleBackColor = true;
             // 
             // lblSHOWTOOLBAR
