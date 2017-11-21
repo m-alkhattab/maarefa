@@ -37,7 +37,6 @@
             this.lblPARNT_OBJECT = new System.Windows.Forms.Label();
             this.txtPARNT_OBJECT = new System.Windows.Forms.TextBox();
             this.lblOBJECT_TYPE = new System.Windows.Forms.Label();
-            this.txtOBJECT_TYPE = new System.Windows.Forms.TextBox();
             this.lblOBJECT_COMMAND = new System.Windows.Forms.Label();
             this.txtOBJECT_COMMAND = new System.Windows.Forms.TextBox();
             this.chkbxSHOWTOOLBAR = new System.Windows.Forms.CheckBox();
@@ -48,6 +47,7 @@
             this.lblShortcutImage = new System.Windows.Forms.Label();
             this.cmbMenuIcon = new System.Windows.Forms.ComboBox();
             this.cmbShortcutIcon = new System.Windows.Forms.ComboBox();
+            this.cmbOBJECT_TYPE = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // imageList1
@@ -151,17 +151,6 @@
             this.lblOBJECT_TYPE.TabIndex = 8;
             this.lblOBJECT_TYPE.Text = "نوع الأمر";
             // 
-            // txtOBJECT_TYPE
-            // 
-            this.txtOBJECT_TYPE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_TYPE.Location = new System.Drawing.Point(16, 141);
-            this.txtOBJECT_TYPE.Name = "txtOBJECT_TYPE";
-            this.txtOBJECT_TYPE.Size = new System.Drawing.Size(276, 20);
-            this.txtOBJECT_TYPE.TabIndex = 5;
-            this.txtOBJECT_TYPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lblOBJECT_COMMAND
             // 
             this.lblOBJECT_COMMAND.AutoSize = true;
@@ -250,25 +239,39 @@
             // 
             // cmbMenuIcon
             // 
+            this.cmbMenuIcon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMenuIcon.FormattingEnabled = true;
-            this.cmbMenuIcon.Location = new System.Drawing.Point(16, 280);
+            this.cmbMenuIcon.Location = new System.Drawing.Point(59, 280);
             this.cmbMenuIcon.Name = "cmbMenuIcon";
-            this.cmbMenuIcon.Size = new System.Drawing.Size(272, 21);
+            this.cmbMenuIcon.Size = new System.Drawing.Size(233, 21);
             this.cmbMenuIcon.TabIndex = 18;
             // 
             // cmbShortcutIcon
             // 
+            this.cmbShortcutIcon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbShortcutIcon.FormattingEnabled = true;
-            this.cmbShortcutIcon.Location = new System.Drawing.Point(16, 334);
+            this.cmbShortcutIcon.Location = new System.Drawing.Point(59, 334);
             this.cmbShortcutIcon.Name = "cmbShortcutIcon";
-            this.cmbShortcutIcon.Size = new System.Drawing.Size(272, 21);
+            this.cmbShortcutIcon.Size = new System.Drawing.Size(233, 21);
             this.cmbShortcutIcon.TabIndex = 19;
+            // 
+            // cmbOBJECT_TYPE
+            // 
+            this.cmbOBJECT_TYPE.AllowDrop = true;
+            this.cmbOBJECT_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOBJECT_TYPE.FormattingEnabled = true;
+            this.cmbOBJECT_TYPE.Location = new System.Drawing.Point(16, 134);
+            this.cmbOBJECT_TYPE.Name = "cmbOBJECT_TYPE";
+            this.cmbOBJECT_TYPE.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbOBJECT_TYPE.Size = new System.Drawing.Size(276, 21);
+            this.cmbOBJECT_TYPE.TabIndex = 20;
             // 
             // frmManageMenus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 472);
+            this.Controls.Add(this.cmbOBJECT_TYPE);
             this.Controls.Add(this.cmbShortcutIcon);
             this.Controls.Add(this.cmbMenuIcon);
             this.Controls.Add(this.lblShortcutImage);
@@ -280,7 +283,6 @@
             this.Controls.Add(this.lblOBJECT_COMMAND);
             this.Controls.Add(this.txtOBJECT_COMMAND);
             this.Controls.Add(this.lblOBJECT_TYPE);
-            this.Controls.Add(this.txtOBJECT_TYPE);
             this.Controls.Add(this.lblPARNT_OBJECT);
             this.Controls.Add(this.txtPARNT_OBJECT);
             this.Controls.Add(this.lblOBJECT_NAME_AR);
@@ -307,7 +309,6 @@
         private System.Windows.Forms.Label lblPARNT_OBJECT;
         private System.Windows.Forms.TextBox txtPARNT_OBJECT;
         private System.Windows.Forms.Label lblOBJECT_TYPE;
-        private System.Windows.Forms.TextBox txtOBJECT_TYPE;
         private System.Windows.Forms.Label lblOBJECT_COMMAND;
         private System.Windows.Forms.TextBox txtOBJECT_COMMAND;
         private System.Windows.Forms.CheckBox chkbxSHOWTOOLBAR;
@@ -318,5 +319,6 @@
         private System.Windows.Forms.Label lblShortcutImage;
         private System.Windows.Forms.ComboBox cmbMenuIcon;
         private System.Windows.Forms.ComboBox cmbShortcutIcon;
+        private System.Windows.Forms.ComboBox cmbOBJECT_TYPE;
     }
 }
