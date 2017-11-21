@@ -48,6 +48,8 @@
             this.cmbMenuIcon = new System.Windows.Forms.ComboBox();
             this.cmbShortcutIcon = new System.Windows.Forms.ComboBox();
             this.cmbOBJECT_TYPE = new System.Windows.Forms.ComboBox();
+            this.btnRemoveMImage = new System.Windows.Forms.Button();
+            this.btnRemoveTImage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imageList1
@@ -76,6 +78,7 @@
             this.btnAddNode.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddNode.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnAddNode.FlatAppearance.BorderSize = 0;
+            this.btnAddNode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNode.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNode.Image")));
             this.btnAddNode.Location = new System.Drawing.Point(681, 419);
             this.btnAddNode.Name = "btnAddNode";
@@ -90,6 +93,7 @@
             this.btnDeleteNode.BackColor = System.Drawing.SystemColors.Control;
             this.btnDeleteNode.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnDeleteNode.FlatAppearance.BorderSize = 0;
+            this.btnDeleteNode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteNode.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteNode.Image")));
             this.btnDeleteNode.Location = new System.Drawing.Point(580, 419);
             this.btnDeleteNode.Name = "btnDeleteNode";
@@ -266,11 +270,36 @@
             this.cmbOBJECT_TYPE.Size = new System.Drawing.Size(276, 21);
             this.cmbOBJECT_TYPE.TabIndex = 20;
             // 
+            // btnRemoveMImage
+            // 
+            this.btnRemoveMImage.FlatAppearance.BorderSize = 0;
+            this.btnRemoveMImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveMImage.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveMImage.Image")));
+            this.btnRemoveMImage.Location = new System.Drawing.Point(12, 275);
+            this.btnRemoveMImage.Name = "btnRemoveMImage";
+            this.btnRemoveMImage.Size = new System.Drawing.Size(41, 33);
+            this.btnRemoveMImage.TabIndex = 21;
+            this.btnRemoveMImage.UseVisualStyleBackColor = true;
+            this.btnRemoveMImage.Click += new System.EventHandler(this.btnRemoveMImage_Click);
+            // 
+            // btnRemoveTImage
+            // 
+            this.btnRemoveTImage.FlatAppearance.BorderSize = 0;
+            this.btnRemoveTImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveTImage.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveTImage.Image")));
+            this.btnRemoveTImage.Location = new System.Drawing.Point(12, 329);
+            this.btnRemoveTImage.Name = "btnRemoveTImage";
+            this.btnRemoveTImage.Size = new System.Drawing.Size(41, 36);
+            this.btnRemoveTImage.TabIndex = 22;
+            this.btnRemoveTImage.UseVisualStyleBackColor = true;
+            // 
             // frmManageMenus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 472);
+            this.Controls.Add(this.btnRemoveTImage);
+            this.Controls.Add(this.btnRemoveMImage);
             this.Controls.Add(this.cmbOBJECT_TYPE);
             this.Controls.Add(this.cmbShortcutIcon);
             this.Controls.Add(this.cmbMenuIcon);
@@ -320,5 +349,7 @@
         private System.Windows.Forms.ComboBox cmbMenuIcon;
         private System.Windows.Forms.ComboBox cmbShortcutIcon;
         private System.Windows.Forms.ComboBox cmbOBJECT_TYPE;
+        private System.Windows.Forms.Button btnRemoveMImage;
+        private System.Windows.Forms.Button btnRemoveTImage;
     }
 }

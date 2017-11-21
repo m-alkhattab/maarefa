@@ -162,6 +162,8 @@ namespace maarefa
                     txtPARNT_OBJECT.Enabled = false;
                     cmbShortcutIcon.Enabled = false;
                     cmbMenuIcon.Enabled = false;
+                    btnRemoveMImage.Enabled = false;
+                    btnRemoveTImage.Enabled = false;
                     chkbxSHOWTOOLBAR.Enabled = false;
                     btnDeleteNode.Enabled = false;
                     btnCancel.Enabled = false;
@@ -178,6 +180,8 @@ namespace maarefa
                     cmbOBJECT_TYPE.Enabled = true;
                     cmbShortcutIcon.Enabled = true;
                     cmbMenuIcon.Enabled = true;
+                    btnRemoveTImage.Enabled = true;
+                    btnRemoveMImage.Enabled = true;
                     if (e.Node.Parent.Tag.ToString() == "0")
                     {
                         chkbxSHOWTOOLBAR.Enabled = false;
@@ -229,8 +233,12 @@ namespace maarefa
             }
             else
             {
-                Save();
-                ReloadTree();
+                DialogResult dialogresult = MessageBox.Show("هل تريد تأكيد حفظ التعديلات ؟", "تأكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogresult == DialogResult.Yes)
+                {
+                    Save();
+                    ReloadTree();
+                }
 
             }
 
@@ -267,6 +275,15 @@ namespace maarefa
      
 
         #endregion
+
+        private void btnRemoveMImage_Click(object sender, EventArgs e)
+        {
+            cmbMenuIcon.SelectedIndex = -1;
+        }
+        private void btnRemoveTImage_Click(object sender, EventArgs e)
+        {
+           cmbShortcutIcon.SelectedIndex = -1;
+        }
 
       
 
