@@ -1,0 +1,53 @@
+USE [MAAREF]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spUpdateObject]    Script Date: 11/21/2017 10:59:48 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[spUpdateObject] 
+@OBJECTID bigint,
+@OBJECTNAMEAR VARCHAR(50),
+@OBJECTCOMMAND VARCHAR(100),
+@OBJECTTYPE SMALLINT,
+--@PARNTOBJECT BIGINT,
+@SHOWTOOLBAR SMALLINT,
+@MENUICON VARCHAR(100),
+@TOOLBARICON VARCHAR(100),
+@LUPDATEUSER BIGINT,
+@LUPDATEPC VARCHAR(20),
+@LUPDATETIMESTAMP DATETIME,
+@TRANSSTATUS SMALLINT,
+@RECORDSTATUS SMALLINT
+AS
+BEGIN
+    -- Insert statements for procedure here
+	update  dbo.OBJECTS set [OBJECT_NAME_AR] = @OBJECTNAMEAR
+      ,[OBJECT_COMMAND] = @OBJECTCOMMAND
+      ,[OBJECT_TYPE] = @OBJECTTYPE
+      ,[SHOWTOOLBAR] = @SHOWTOOLBAR
+      ,[MENU_ICON] = @MENUICON
+      ,[TOOLBAR_ICON] = @TOOLBARICON
+      ,[LUPDATE_USER] = @LUPDATEUSER
+      ,[LUPDATE_PC] = @LUPDATEPC
+      ,[LUPDATE_TIMESTAMP] = @LUPDATETIMESTAMP
+      ,[TRANS_STATUS] = @TRANSSTATUS
+      ,[RECORD_STATUS] = @RECORDSTATUS
+	  where [OBJECT_ID] = @OBJECTID
+	   
+END
+
+
+
+GO
+
