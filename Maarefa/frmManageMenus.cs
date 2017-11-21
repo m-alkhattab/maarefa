@@ -92,7 +92,7 @@ namespace maarefa
                     txtOBJECT_NAME_AR.Text = "/";
                     txtOBJECT_COMMAND.Text = "";
                     txtOBJECT_TYPE.Text = "";
-                    txtPARNT_OBJECT.Text = "0";
+                    txtPARNT_OBJECT.Text = "-1";
                     txtOBJECT_COMMAND.Enabled = false;
                     txtOBJECT_NAME_AR.Enabled = false;
                     txtOBJECT_TYPE.Enabled = false;
@@ -114,7 +114,14 @@ namespace maarefa
                     txtPARNT_OBJECT.Enabled = true;
                     cmbShortcutIcon.Enabled = true;
                     cmbMenuIcon.Enabled = true;
-                    chkbxSHOWTOOLBAR.Enabled = true;
+                    if (e.Node.Parent.Tag.ToString() == "0")
+                    {
+                        chkbxSHOWTOOLBAR.Enabled = false;
+                    }
+                    else
+                    {
+                        chkbxSHOWTOOLBAR.Enabled = true;
+                    }
                     btnDeleteNode.Enabled = true;
                     btnCancel.Enabled = true;
                     btnSave.Enabled = true;
@@ -159,60 +166,63 @@ namespace maarefa
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            objManageMenus.ObjectNameAR = txtOBJECT_NAME_AR.Text;
-            objManageMenus.OBJECTCOMMAND = txtOBJECT_COMMAND.Text;
-            objManageMenus.OBJECTTYPE = Convert.ToInt16(txtOBJECT_TYPE.Text);
-            objManageMenus.PARNTOBJECT = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
-            objManageMenus.SHOWTOOLBAR = chkbxSHOWTOOLBAR.Checked ? 1 : 0;
-            objManageMenus.MENUICON = cmbMenuIcon.SelectedIndex;
-            objManageMenus.TOOLBARICON = cmbShortcutIcon.SelectedIndex;
-            objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
-            if (mode == 1)
+            DialogResult dialogresult = MessageBox.Show("تأكيد الحفظ؟", "حفظ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogresult == DialogResult.Yes)
             {
-                objManageMenus.InsertNewMenuItem();
+                objManageMenus.ObjectNameAR = txtOBJECT_NAME_AR.Text;
+                objManageMenus.OBJECTCOMMAND = txtOBJECT_COMMAND.Text;
+                objManageMenus.OBJECTTYPE = Convert.ToInt16(txtOBJECT_TYPE.Text);
+                objManageMenus.PARNTOBJECT = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
+                objManageMenus.SHOWTOOLBAR = chkbxSHOWTOOLBAR.Checked ? 1 : 0;
+                objManageMenus.MENUICON = cmbMenuIcon.SelectedIndex;
+                objManageMenus.TOOLBARICON = cmbShortcutIcon.SelectedIndex;
+                objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
+                if (mode == 1)
+                {
+                    objManageMenus.InsertNewMenuItem();
 
+                }
+                else
+                {
+                    objManageMenus.UpdateMenuItem();
+
+                }
+                txtOBJECT_COMMAND.Clear();
+                txtOBJECT_NAME_AR.Clear();
+                txtOBJECT_TYPE.Clear();
+                txtPARNT_OBJECT.Clear();
+                treeVMenus.Nodes.Clear();
+                loadParents();
+                treeVMenus.ExpandAll();
+                treeVMenus.Enabled = true;
+                treeVMenus.Focus();
             }
-            else
-            {
-                objManageMenus.UpdateMenuItem();
-
-            }
-            txtOBJECT_COMMAND.Clear();
-            txtOBJECT_NAME_AR.Clear();
-            txtOBJECT_TYPE.Clear();
-            txtPARNT_OBJECT.Clear();
-            treeVMenus.Nodes.Clear();
-            loadParents();
-            treeVMenus.ExpandAll();
-            treeVMenus.Enabled = true;
-            treeVMenus.Focus();
-
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtOBJECT_COMMAND.Clear();
-            txtOBJECT_NAME_AR.Clear();
-            txtOBJECT_TYPE.Clear();
-            txtPARNT_OBJECT.Clear();
-            treeVMenus.Nodes.Clear();
-            cmbMenuIcon.SelectedIndex = -1;
-            cmbShortcutIcon.SelectedIndex = -1;
-            loadParents();
-            treeVMenus.ExpandAll();
-            treeVMenus.Enabled = true;
-            treeVMenus.Focus();
-
+            DialogResult dialogresult = MessageBox.Show("هل تريد حقا التراجع عن هذه التعديلات؟", "تراجع", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogresult == DialogResult.Yes)
+            {
+                txtOBJECT_COMMAND.Clear();
+                txtOBJECT_NAME_AR.Clear();
+                txtOBJECT_TYPE.Clear();
+                txtPARNT_OBJECT.Clear();
+                treeVMenus.Nodes.Clear();
+                cmbMenuIcon.SelectedIndex = -1;
+                cmbShortcutIcon.SelectedIndex = -1;
+                loadParents();
+                treeVMenus.ExpandAll();
+                treeVMenus.Enabled = true;
+                treeVMenus.Focus();
+            }
 
 
         }
-
-        #endregion
-
         private void btnDeleteNode_Click(object sender, EventArgs e)
         {
-            DialogResult dialogresult =  MessageBox.Show("هل تريد حقا حذف هذه القائمة ؟","حذف القائمة المختارة",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            DialogResult dialogresult = MessageBox.Show("هل تريد حقا حذف هذه القائمة ؟", "حذف القائمة المختارة", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogresult == DialogResult.Yes)
             {
                 objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
@@ -231,8 +241,12 @@ namespace maarefa
             {
                 treeVMenus.Focus();
             }
-           
+
         }
+
+        #endregion
+
+      
 
        
 
