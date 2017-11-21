@@ -100,6 +100,9 @@ namespace maarefa
                     cmbShortcutIcon.Enabled = false;
                     cmbMenuIcon.Enabled = false;
                     chkbxSHOWTOOLBAR.Enabled = false;
+                    btnDeleteNode.Enabled = false;
+                    btnCancel.Enabled = false;
+                    btnSave.Enabled = false;
                 
                 
                 }
@@ -112,6 +115,9 @@ namespace maarefa
                     cmbShortcutIcon.Enabled = true;
                     cmbMenuIcon.Enabled = true;
                     chkbxSHOWTOOLBAR.Enabled = true;
+                    btnDeleteNode.Enabled = true;
+                    btnCancel.Enabled = true;
+                    btnSave.Enabled = true;
                     DataRow dr = menutbl.Rows.Find(e.Node.Tag.ToString());
                     txtOBJECT_NAME_AR.Text = dr["OBJECT_NAME_AR"].ToString();
                     txtOBJECT_COMMAND.Text = dr["OBJECT_COMMAND"].ToString();
@@ -203,6 +209,30 @@ namespace maarefa
         }
 
         #endregion
+
+        private void btnDeleteNode_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogresult =  MessageBox.Show("هل تريد حقا حذف هذه القائمة ؟","حذف القائمة المختارة",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (dialogresult == DialogResult.Yes)
+            {
+                objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
+                objManageMenus.DeleteMenuItem();
+                txtOBJECT_COMMAND.Clear();
+                txtOBJECT_NAME_AR.Clear();
+                txtOBJECT_TYPE.Clear();
+                txtPARNT_OBJECT.Clear();
+                treeVMenus.Nodes.Clear();
+                loadParents();
+                treeVMenus.ExpandAll();
+                treeVMenus.Enabled = true;
+                treeVMenus.Focus();
+            }
+            else
+            {
+                treeVMenus.Focus();
+            }
+           
+        }
 
        
 

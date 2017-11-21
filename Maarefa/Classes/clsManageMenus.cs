@@ -113,11 +113,15 @@ namespace maarefa.Classes
                                                                , "@SHOWTOOLBAR", _SHOWTOOLBAR, "@MENUICON", _MENUICON, "@TOOLBARICON", _TOOLBARICON, "@CREATEUSER", _CREATEUSER, "@CREATEPC", _CREATEPC, "@CREATETIMESTAMP", _CREATETIMESTAMP, "@TRANSSTATUS", _TRANSSTATUS, "@RECORDSTATUS", 0);
 
         }
-        internal void UpdateMenuItem()
+        public void UpdateMenuItem()
         {
             ExecuteCommandWithoutTransaction("spUpdateObject", "@OBJECTID", _OBJECTID, "@ObjectNameAR", _ObjectNameAR, "@OBJECTCOMMAND", _OBJECTCOMMAND, "@OBJECTTYPE", _OBJECTTYPE,
                                                                 "@SHOWTOOLBAR", _SHOWTOOLBAR, "@MENUICON", _MENUICON, "@TOOLBARICON", _TOOLBARICON, "@LUPDATEUSER", _LUPDATEUSER, "@LUPDATEPC", _LUPDATEPC, "@LUPDATETIMESTAMP", _LUPDATETIMESTAMP, "@TRANSSTATUS", _TRANSSTATUS, "@RECORDSTATUS", 1);
 
+        }
+        public void DeleteMenuItem()
+        {
+            ExecuteCommandWithoutTransaction("spDeleteObject", "@OBJECTID", _OBJECTID);
         }
 
         #endregion

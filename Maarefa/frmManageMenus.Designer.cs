@@ -96,6 +96,7 @@
             this.btnDeleteNode.Size = new System.Drawing.Size(48, 49);
             this.btnDeleteNode.TabIndex = 2;
             this.btnDeleteNode.UseVisualStyleBackColor = false;
+            this.btnDeleteNode.Click += new System.EventHandler(this.btnDeleteNode_Click);
             // 
             // txtOBJECT_NAME_AR
             // 
@@ -285,7 +286,7 @@
             this.Controls.Add(this.treeVMenus);
             this.Name = "frmManageMenus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmManageMenus";
+            this.Text = "شاشة إدارة القوائم";
             this.Load += new System.EventHandler(this.frmManageMenus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
