@@ -62,7 +62,7 @@
             // treeVMenus
             // 
             this.treeVMenus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.treeVMenus.Location = new System.Drawing.Point(521, 12);
+            this.treeVMenus.Location = new System.Drawing.Point(484, 12);
             this.treeVMenus.Name = "treeVMenus";
             this.treeVMenus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeVMenus.RightToLeftLayout = true;
@@ -77,7 +77,7 @@
             this.btnAddNode.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnAddNode.FlatAppearance.BorderSize = 0;
             this.btnAddNode.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNode.Image")));
-            this.btnAddNode.Location = new System.Drawing.Point(718, 419);
+            this.btnAddNode.Location = new System.Drawing.Point(681, 419);
             this.btnAddNode.Name = "btnAddNode";
             this.btnAddNode.Size = new System.Drawing.Size(48, 49);
             this.btnAddNode.TabIndex = 1;
@@ -91,7 +91,7 @@
             this.btnDeleteNode.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnDeleteNode.FlatAppearance.BorderSize = 0;
             this.btnDeleteNode.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteNode.Image")));
-            this.btnDeleteNode.Location = new System.Drawing.Point(617, 419);
+            this.btnDeleteNode.Location = new System.Drawing.Point(580, 419);
             this.btnDeleteNode.Name = "btnDeleteNode";
             this.btnDeleteNode.Size = new System.Drawing.Size(48, 49);
             this.btnDeleteNode.TabIndex = 2;
@@ -102,9 +102,9 @@
             this.txtOBJECT_NAME_AR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_NAME_AR.Location = new System.Drawing.Point(12, 41);
+            this.txtOBJECT_NAME_AR.Location = new System.Drawing.Point(16, 41);
             this.txtOBJECT_NAME_AR.Name = "txtOBJECT_NAME_AR";
-            this.txtOBJECT_NAME_AR.Size = new System.Drawing.Size(273, 20);
+            this.txtOBJECT_NAME_AR.Size = new System.Drawing.Size(276, 20);
             this.txtOBJECT_NAME_AR.TabIndex = 3;
             this.txtOBJECT_NAME_AR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -112,7 +112,7 @@
             // 
             this.lblOBJECT_NAME_AR.AutoSize = true;
             this.lblOBJECT_NAME_AR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOBJECT_NAME_AR.Location = new System.Drawing.Point(460, 40);
+            this.lblOBJECT_NAME_AR.Location = new System.Drawing.Point(421, 40);
             this.lblOBJECT_NAME_AR.Name = "lblOBJECT_NAME_AR";
             this.lblOBJECT_NAME_AR.Size = new System.Drawing.Size(34, 18);
             this.lblOBJECT_NAME_AR.TabIndex = 4;
@@ -122,7 +122,7 @@
             // 
             this.lblPARNT_OBJECT.AutoSize = true;
             this.lblPARNT_OBJECT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPARNT_OBJECT.Location = new System.Drawing.Point(408, 186);
+            this.lblPARNT_OBJECT.Location = new System.Drawing.Point(369, 186);
             this.lblPARNT_OBJECT.Name = "lblPARNT_OBJECT";
             this.lblPARNT_OBJECT.Size = new System.Drawing.Size(86, 18);
             this.lblPARNT_OBJECT.TabIndex = 6;
@@ -134,9 +134,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPARNT_OBJECT.Enabled = false;
-            this.txtPARNT_OBJECT.Location = new System.Drawing.Point(12, 191);
+            this.txtPARNT_OBJECT.Location = new System.Drawing.Point(16, 191);
             this.txtPARNT_OBJECT.Name = "txtPARNT_OBJECT";
-            this.txtPARNT_OBJECT.Size = new System.Drawing.Size(273, 20);
+            this.txtPARNT_OBJECT.Size = new System.Drawing.Size(276, 20);
             this.txtPARNT_OBJECT.TabIndex = 5;
             this.txtPARNT_OBJECT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -144,7 +144,7 @@
             // 
             this.lblOBJECT_TYPE.AutoSize = true;
             this.lblOBJECT_TYPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOBJECT_TYPE.Location = new System.Drawing.Point(439, 137);
+            this.lblOBJECT_TYPE.Location = new System.Drawing.Point(400, 137);
             this.lblOBJECT_TYPE.Name = "lblOBJECT_TYPE";
             this.lblOBJECT_TYPE.Size = new System.Drawing.Size(55, 18);
             this.lblOBJECT_TYPE.TabIndex = 8;
@@ -155,9 +155,9 @@
             this.txtOBJECT_TYPE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_TYPE.Location = new System.Drawing.Point(12, 141);
+            this.txtOBJECT_TYPE.Location = new System.Drawing.Point(16, 141);
             this.txtOBJECT_TYPE.Name = "txtOBJECT_TYPE";
-            this.txtOBJECT_TYPE.Size = new System.Drawing.Size(273, 20);
+            this.txtOBJECT_TYPE.Size = new System.Drawing.Size(276, 20);
             this.txtOBJECT_TYPE.TabIndex = 5;
             this.txtOBJECT_TYPE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -165,7 +165,7 @@
             // 
             this.lblOBJECT_COMMAND.AutoSize = true;
             this.lblOBJECT_COMMAND.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOBJECT_COMMAND.Location = new System.Drawing.Point(460, 90);
+            this.lblOBJECT_COMMAND.Location = new System.Drawing.Point(421, 90);
             this.lblOBJECT_COMMAND.Name = "lblOBJECT_COMMAND";
             this.lblOBJECT_COMMAND.Size = new System.Drawing.Size(33, 18);
             this.lblOBJECT_COMMAND.TabIndex = 10;
@@ -176,16 +176,16 @@
             this.txtOBJECT_COMMAND.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOBJECT_COMMAND.Location = new System.Drawing.Point(12, 91);
+            this.txtOBJECT_COMMAND.Location = new System.Drawing.Point(16, 91);
             this.txtOBJECT_COMMAND.Name = "txtOBJECT_COMMAND";
-            this.txtOBJECT_COMMAND.Size = new System.Drawing.Size(273, 20);
+            this.txtOBJECT_COMMAND.Size = new System.Drawing.Size(276, 20);
             this.txtOBJECT_COMMAND.TabIndex = 4;
             this.txtOBJECT_COMMAND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chkbxSHOWTOOLBAR
             // 
             this.chkbxSHOWTOOLBAR.AutoSize = true;
-            this.chkbxSHOWTOOLBAR.Location = new System.Drawing.Point(270, 241);
+            this.chkbxSHOWTOOLBAR.Location = new System.Drawing.Point(274, 241);
             this.chkbxSHOWTOOLBAR.Name = "chkbxSHOWTOOLBAR";
             this.chkbxSHOWTOOLBAR.Size = new System.Drawing.Size(15, 14);
             this.chkbxSHOWTOOLBAR.TabIndex = 6;
@@ -195,7 +195,7 @@
             // 
             this.lblSHOWTOOLBAR.AutoSize = true;
             this.lblSHOWTOOLBAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSHOWTOOLBAR.Location = new System.Drawing.Point(339, 235);
+            this.lblSHOWTOOLBAR.Location = new System.Drawing.Point(300, 235);
             this.lblSHOWTOOLBAR.Name = "lblSHOWTOOLBAR";
             this.lblSHOWTOOLBAR.Size = new System.Drawing.Size(155, 18);
             this.lblSHOWTOOLBAR.TabIndex = 12;
@@ -203,7 +203,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(269, 401);
+            this.btnSave.Location = new System.Drawing.Point(230, 401);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 53);
             this.btnSave.TabIndex = 14;
@@ -214,7 +214,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(98, 401);
+            this.btnCancel.Location = new System.Drawing.Point(59, 401);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 53);
             this.btnCancel.TabIndex = 15;
@@ -227,7 +227,7 @@
             // 
             this.lblMenuImage.AutoSize = true;
             this.lblMenuImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuImage.Location = new System.Drawing.Point(420, 284);
+            this.lblMenuImage.Location = new System.Drawing.Point(381, 284);
             this.lblMenuImage.Name = "lblMenuImage";
             this.lblMenuImage.Size = new System.Drawing.Size(74, 18);
             this.lblMenuImage.TabIndex = 16;
@@ -237,7 +237,7 @@
             // 
             this.lblShortcutImage.AutoSize = true;
             this.lblShortcutImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShortcutImage.Location = new System.Drawing.Point(355, 333);
+            this.lblShortcutImage.Location = new System.Drawing.Point(316, 333);
             this.lblShortcutImage.Name = "lblShortcutImage";
             this.lblShortcutImage.Size = new System.Drawing.Size(139, 18);
             this.lblShortcutImage.TabIndex = 17;
@@ -246,7 +246,7 @@
             // cmbMenuIcon
             // 
             this.cmbMenuIcon.FormattingEnabled = true;
-            this.cmbMenuIcon.Location = new System.Drawing.Point(12, 280);
+            this.cmbMenuIcon.Location = new System.Drawing.Point(16, 280);
             this.cmbMenuIcon.Name = "cmbMenuIcon";
             this.cmbMenuIcon.Size = new System.Drawing.Size(272, 21);
             this.cmbMenuIcon.TabIndex = 18;
@@ -254,7 +254,7 @@
             // cmbShortcutIcon
             // 
             this.cmbShortcutIcon.FormattingEnabled = true;
-            this.cmbShortcutIcon.Location = new System.Drawing.Point(12, 334);
+            this.cmbShortcutIcon.Location = new System.Drawing.Point(16, 334);
             this.cmbShortcutIcon.Name = "cmbShortcutIcon";
             this.cmbShortcutIcon.Size = new System.Drawing.Size(272, 21);
             this.cmbShortcutIcon.TabIndex = 19;
@@ -263,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 472);
+            this.ClientSize = new System.Drawing.Size(860, 472);
             this.Controls.Add(this.cmbShortcutIcon);
             this.Controls.Add(this.cmbMenuIcon);
             this.Controls.Add(this.lblShortcutImage);
