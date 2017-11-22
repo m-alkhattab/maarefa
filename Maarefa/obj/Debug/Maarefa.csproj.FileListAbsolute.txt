@@ -97,8 +97,8 @@ F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmTest1.resources
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmtest2.resources
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.Properties.Resources.resources
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\Maarefa.csproj.GenerateResource.Cache
-F:\FreeLance\Maarefa\Maarefa\obj\Debug\Maarefa.csprojResolveAssemblyReference.cache
 E:\Jithub\Maarefa\bin\Debug\maarefa.exe.config
 E:\Jithub\Maarefa\obj\Debug\maarefa.exe
 E:\Jithub\Maarefa\obj\Debug\maarefa.pdb
 F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmManagePrivileges.resources
+F:\FreeLance\Maarefa\Maarefa\obj\Debug\Maarefa.csprojResolveAssemblyReference.cache

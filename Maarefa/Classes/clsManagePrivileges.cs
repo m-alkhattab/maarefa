@@ -106,6 +106,10 @@ namespace maarefa.Classes
             return GetDataTable("spGetRoles");
             
         }
+        public DataTable GetMenuObjects()
+        {
+            return GetDataTable("spGetObjects");
+        }
         public void InsertNewMenuItem()
         {
             ExecuteCommandWithoutTransaction("spInsertObject", "@ObjectNameAR", _ObjectNameAR, "@OBJECTCOMMAND", _OBJECTCOMMAND, "@OBJECTTYPE", _OBJECTTYPE, "@PARNTOBJECT", _PARNTOBJECT

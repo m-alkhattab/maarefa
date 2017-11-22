@@ -23,19 +23,16 @@ namespace maarefa
         #region Variables
         clsManagePrivileges objManagePrivileges = new clsManagePrivileges();
         DataTable rolestbl = new DataTable();
+        DataTable menutbl = new DataTable();
         int mode = 0; //edit = 0 or new = 1
         #endregion
 
         #region Methods
-        /*
+        
         void loadParents()
         { 
-            menutbl = objManageMenus.GetMenuObjects();
+            menutbl = objManagePrivileges.GetMenuObjects();
             menutbl.PrimaryKey = new DataColumn[] { menutbl.Columns["OBJECT_ID"] };
-            TreeNode root = new TreeNode();
-            root.Text = "/";
-            root.Tag = "0";
-            treeVMenus.Nodes.Add(root);
             foreach (DataRow dr in menutbl.Rows)
             {
                 if (Convert.ToInt16(dr["PARNT_OBJECT"]) == 0)
@@ -44,7 +41,7 @@ namespace maarefa
                     TreeNode parent = new TreeNode();
                     parent.Text = dr["OBJECT_NAME_AR"].ToString();
                     parent.Tag = dr["OBJECT_ID"].ToString();
-                    root.Nodes.Add(parent);
+                    treeVMenus.Nodes.Add(parent);
                     loadChilds(parent, dr["OBJECT_ID"].ToString());
 
                 }
@@ -63,7 +60,7 @@ namespace maarefa
                 loadChilds(child, dr["OBJECT_ID"].ToString());
             }
         }
-         */ 
+         
         private void populateCmb()
         {
             rolestbl = objManagePrivileges.GetRoles();
@@ -140,11 +137,10 @@ namespace maarefa
         private void frmManageMenus_Load(object sender, EventArgs e)
         {
 
-            /*
+            
             treeVMenus.Nodes.Clear();
             loadParents();
             treeVMenus.ExpandAll();
-             */
             populateCmb();
             
            
