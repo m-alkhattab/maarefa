@@ -101,3 +101,4 @@ F:\FreeLance\Maarefa\Maarefa\obj\Debug\Maarefa.csprojResolveAssemblyReference.ca
 E:\Jithub\Maarefa\bin\Debug\maarefa.exe.config
 E:\Jithub\Maarefa\obj\Debug\maarefa.exe
 E:\Jithub\Maarefa\obj\Debug\maarefa.pdb
+F:\FreeLance\Maarefa\Maarefa\obj\Debug\maarefa.frmManagePrivileges.resources

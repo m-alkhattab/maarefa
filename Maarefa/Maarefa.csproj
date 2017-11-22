@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\clsBranch.cs" />
+    <Compile Include="Classes\clsManagePrivileges.cs" />
     <Compile Include="Classes\clsManageMenus.cs" />
     <Compile Include="Classes\clsUser.cs" />
     <Compile Include="clsLogin.cs" />
@@ -67,6 +68,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManagePrivileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManagePrivileges.Designer.cs">
+      <DependentUpon>frmManagePrivileges.cs</DependentUpon>
     </Compile>
     <Compile Include="frmManageMenus.cs">
       <SubType>Form</SubType>
@@ -110,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManagePrivileges.resx">
+      <DependentUpon>frmManagePrivileges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageMenus.resx">
       <DependentUpon>frmManageMenus.cs</DependentUpon>

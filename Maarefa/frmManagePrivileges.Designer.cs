@@ -1,6 +1,6 @@
 ﻿namespace maarefa
 {
-    partial class frmManageMenus
+    partial class frmManagePrivileges
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageMenus));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManagePrivileges));
             this.treeVMenus = new System.Windows.Forms.TreeView();
             this.btnAddNode = new System.Windows.Forms.Button();
             this.btnDeleteNode = new System.Windows.Forms.Button();
@@ -50,6 +50,7 @@
             this.cmbOBJECT_TYPE = new System.Windows.Forms.ComboBox();
             this.btnRemoveMImage = new System.Windows.Forms.Button();
             this.btnRemoveTImage = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // imageList1
@@ -64,11 +65,11 @@
             // treeVMenus
             // 
             this.treeVMenus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeVMenus.Location = new System.Drawing.Point(466, 12);
+            this.treeVMenus.Location = new System.Drawing.Point(466, 41);
             this.treeVMenus.Name = "treeVMenus";
             this.treeVMenus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeVMenus.RightToLeftLayout = true;
-            this.treeVMenus.Size = new System.Drawing.Size(324, 401);
+            this.treeVMenus.Size = new System.Drawing.Size(324, 372);
             this.treeVMenus.TabIndex = 0;
             this.treeVMenus.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeVMenus_AfterSelect);
             // 
@@ -284,11 +285,21 @@
             this.btnRemoveTImage.TabIndex = 11;
             this.btnRemoveTImage.UseVisualStyleBackColor = true;
             // 
-            // frmManageMenus
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(755, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            // 
+            // frmManagePrivileges
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 472);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemoveTImage);
             this.Controls.Add(this.btnRemoveMImage);
             this.Controls.Add(this.cmbOBJECT_TYPE);
@@ -310,9 +321,9 @@
             this.Controls.Add(this.btnDeleteNode);
             this.Controls.Add(this.btnAddNode);
             this.Controls.Add(this.treeVMenus);
-            this.Name = "frmManageMenus";
+            this.Name = "frmManagePrivileges";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "شاشة إدارة القوائم";
+            this.Text = "شاشة إدارة الصلاحيات";
             this.Load += new System.EventHandler(this.frmManageMenus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,5 +353,6 @@
         private System.Windows.Forms.ComboBox cmbOBJECT_TYPE;
         private System.Windows.Forms.Button btnRemoveMImage;
         private System.Windows.Forms.Button btnRemoveTImage;
+        private System.Windows.Forms.Label label1;
     }
 }
