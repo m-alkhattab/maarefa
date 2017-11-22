@@ -18,16 +18,16 @@ namespace maarefa
             InitializeComponent();
         }
 
-      
+
 
         #region Variables
-        clsManageMenus objManageMenus = new clsManageMenus();
-        DataTable menutbl = new DataTable();
+        clsManagePrivileges objManagePrivileges = new clsManagePrivileges();
+        DataTable rolestbl = new DataTable();
         int mode = 0; //edit = 0 or new = 1
-        public Enum Imglst = null;
         #endregion
 
         #region Methods
+        /*
         void loadParents()
         { 
             menutbl = objManageMenus.GetMenuObjects();
@@ -63,18 +63,15 @@ namespace maarefa
                 loadChilds(child, dr["OBJECT_ID"].ToString());
             }
         }
+         */ 
         private void populateCmb()
         {
-            for (int i = 0; i <= imageList1.Images.Count-1; i++)
-            {
-                cmbMenuIcon.Items.Insert(imageList1.Images.IndexOfKey(imageList1.Images.Keys[i]), imageList1.Images.Keys[i]);
-                cmbShortcutIcon.Items.Insert(imageList1.Images.IndexOfKey(imageList1.Images.Keys[i]), imageList1.Images.Keys[i]);
-            }
-            cmbOBJECT_TYPE.Items.Insert(0, "قائمة");
-            cmbOBJECT_TYPE.Items.Insert(1, "شاشة");
-            cmbOBJECT_TYPE.Items.Insert(2, "تقرير");
-
+            rolestbl = objManagePrivileges.GetRoles();
+            cmbRoles.DataSource = rolestbl;
+            cmbRoles.DisplayMember = rolestbl.Columns["ROLE_NAME_AR"].ToString();
+            cmbRoles.ValueMember = rolestbl.Columns["ROLE_ID"].ToString();
         }
+         /*
         private void Save()
         {
             objManageMenus.ObjectNameAR = txtOBJECT_NAME_AR.Text;
@@ -136,20 +133,25 @@ namespace maarefa
             treeVMenus.Enabled = true;
             treeVMenus.Focus();
         }
+         * */
         #endregion
 
         #region Events
         private void frmManageMenus_Load(object sender, EventArgs e)
         {
+
+            /*
             treeVMenus.Nodes.Clear();
             loadParents();
             treeVMenus.ExpandAll();
+             */
             populateCmb();
             
            
         }
         private void treeVMenus_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            /*
                 if (e.Node.Text.ToString() == "/")
                 {
                     txtOBJECT_NAME_AR.Text = "/";
@@ -210,15 +212,14 @@ namespace maarefa
 
                     }
                 }
+             */
         }
-        private void btnAddNode_Click(object sender, EventArgs e)
-        {
-            AddNode();
-        }
+
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            /*
             if (txtOBJECT_NAME_AR.Text == "")
             {
                 MessageBox.Show("!من فضلك تأكد من إدخال إسم القائمة", "خطأ في البيانات المدخلة", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -241,64 +242,17 @@ namespace maarefa
                 }
 
             }
-
+            */
         }
 
-        
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogresult = MessageBox.Show("هل تريد حقا التراجع عن هذه التعديلات؟", "تراجع", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogresult == DialogResult.Yes)
-            {
-                ReloadTree();
-            }
 
 
-        }
-        private void btnDeleteNode_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogresult = MessageBox.Show("هل تريد حقا حذف هذه القائمة ؟", "حذف القائمة المختارة", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogresult == DialogResult.Yes)
-            {
-                objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
-                objManageMenus.DeleteMenuItem();
-                ReloadTree();
-            }
-            else
-            {
-                treeVMenus.Focus();
-            }
 
-        }
-
-     
 
         #endregion
 
-        private void btnRemoveMImage_Click(object sender, EventArgs e)
-        {
-            cmbMenuIcon.SelectedIndex = -1;
-        }
-        private void btnRemoveTImage_Click(object sender, EventArgs e)
-        {
-           cmbShortcutIcon.SelectedIndex = -1;
-        }
-
-
-      
-
-       
-
-      
-
-       
-
-   
-
-     
-
-       
 
     }
+
+   
 }

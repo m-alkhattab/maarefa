@@ -101,11 +101,10 @@ namespace maarefa.Classes
             }
             throw new Exception("Local IP Address Not Found!");
         }
-        public DataTable GetMenuObjects()
+        public DataTable GetRoles()
         {
-            return GetDataTable("spGetObjects");
+            return GetDataTable("spGetRoles");
             
-
         }
         public void InsertNewMenuItem()
         {
