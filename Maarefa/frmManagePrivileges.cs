@@ -24,6 +24,7 @@ namespace maarefa
         clsManagePrivileges objManagePrivileges = new clsManagePrivileges();
         DataTable rolestbl = new DataTable();
         DataTable menutbl = new DataTable();
+        DataTable privilegetbl = new DataTable();
         int mode = 0; //edit = 0 or new = 1
         #endregion
 
@@ -68,69 +69,8 @@ namespace maarefa
             cmbRoles.DisplayMember = rolestbl.Columns["ROLE_NAME_AR"].ToString();
             cmbRoles.ValueMember = rolestbl.Columns["ROLE_ID"].ToString();
         }
-         /*
-        private void Save()
-        {
-            objManageMenus.ObjectNameAR = txtOBJECT_NAME_AR.Text;
-            objManageMenus.OBJECTCOMMAND = txtOBJECT_COMMAND.Text;
-            objManageMenus.OBJECTTYPE = cmbOBJECT_TYPE.SelectedIndex;
-            objManageMenus.PARNTOBJECT = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
-            objManageMenus.SHOWTOOLBAR = chkbxSHOWTOOLBAR.Checked ? 1 : 0;
-            objManageMenus.MENUICON = cmbMenuIcon.SelectedIndex;
-            objManageMenus.TOOLBARICON = cmbShortcutIcon.SelectedIndex;
-            objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
-            if (mode == 1)
-            {
-                objManageMenus.InsertNewMenuItem();
-
-            }
-            else
-            {
-                objManageMenus.UpdateMenuItem();
-
-            }
-        }
-        private void AddNode()
-        {
-            mode = 1;
-            txtOBJECT_COMMAND.Clear();
-            txtOBJECT_COMMAND.Enabled = true;
-            txtOBJECT_NAME_AR.Clear();
-            txtOBJECT_NAME_AR.Enabled = true;
-            cmbOBJECT_TYPE.SelectedIndex = -1;
-            cmbOBJECT_TYPE.Enabled = true;
-            cmbShortcutIcon.Enabled = true;
-            cmbShortcutIcon.SelectedIndex = -1;
-            cmbMenuIcon.Enabled = true;
-            cmbMenuIcon.SelectedIndex = -1;
-            txtPARNT_OBJECT.Text = treeVMenus.SelectedNode.Tag.ToString();
-            chkbxSHOWTOOLBAR.Checked = false;
-            if (treeVMenus.SelectedNode.Tag.ToString() == "0")
-            {
-                chkbxSHOWTOOLBAR.Enabled = false;
-            }
-            else
-            {
-                chkbxSHOWTOOLBAR.Enabled = true;
-            }
-            btnCancel.Enabled = true;
-            btnSave.Enabled = true;
-            treeVMenus.Enabled = false;
-            treeVMenus.Focus();
-        }
-        private void ReloadTree()
-        {
-            txtOBJECT_COMMAND.Clear();
-            txtOBJECT_NAME_AR.Clear();
-            cmbOBJECT_TYPE.SelectedIndex = -1;
-            txtPARNT_OBJECT.Clear();
-            treeVMenus.Nodes.Clear();
-            loadParents();
-            treeVMenus.ExpandAll();
-            treeVMenus.Enabled = true;
-            treeVMenus.Focus();
-        }
-         * */
+        
+        
         #endregion
 
         #region Events
@@ -147,98 +87,83 @@ namespace maarefa
         }
         private void treeVMenus_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            /*
-                if (e.Node.Text.ToString() == "/")
+            objManagePrivileges.OBJECTID = Convert.ToInt16(e.Node.Tag.ToString());
+            objManagePrivileges.ROLEID = cmbRoles.SelectedIndex + 1;
+            privilegetbl = objManagePrivileges.GetPrivilege();
+            if (privilegetbl.Rows.Count != 0)
+            {
+                string privstring = privilegetbl.Rows[0].Field<string>(2);
+                bool[] privboolarr = privstring.Select(c => c == '1').ToArray();
+                chkboxEnable.Checked = privboolarr[0];
+                chkboxInsert.Checked = privboolarr[1];
+                chkboxUpdate.Checked = privboolarr[2];
+                chkboxDelete.Checked = privboolarr[3];
+                chkboxPrint.Checked = privboolarr[4];
+            }
+            else
+            {
+                DialogResult dialogresult = MessageBox.Show("!  لم يتم تحديد صلاحيات هذه الشاشة لهذه الوظيفة من قبل" + "\n" + "قم بتحديد الصلاحيات ثم اضغط حفظ","", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dialogresult == DialogResult.OK)
                 {
-                    txtOBJECT_NAME_AR.Text = "/";
-                    txtOBJECT_COMMAND.Text = "";
-                    cmbOBJECT_TYPE.SelectedIndex = -1;
-                    txtPARNT_OBJECT.Text = "-1";
-                    txtOBJECT_COMMAND.Enabled = false;
-                    txtOBJECT_NAME_AR.Enabled = false;
-                    cmbOBJECT_TYPE.Enabled = false;
-                    txtPARNT_OBJECT.Enabled = false;
-                    cmbShortcutIcon.Enabled = false;
-                    cmbMenuIcon.Enabled = false;
-                    btnRemoveMImage.Enabled = false;
-                    btnRemoveTImage.Enabled = false;
-                    chkbxSHOWTOOLBAR.Enabled = false;
-                    btnDeleteNode.Enabled = false;
-                    btnCancel.Enabled = false;
-                    btnSave.Enabled = false;
-                    cmbShortcutIcon.SelectedIndex = -1;
-                    cmbMenuIcon.SelectedIndex = -1;
-                
-                
+                    mode = 1;
+                    chkboxEnable.Checked = false;
+                    chkboxInsert.Checked = false;
+                    chkboxUpdate.Checked = false;
+                    chkboxDelete.Checked = false;
+                    chkboxPrint.Checked = false;
                 }
-                else
-                {
-                    txtOBJECT_COMMAND.Enabled = true;
-                    txtOBJECT_NAME_AR.Enabled = true;
-                    cmbOBJECT_TYPE.Enabled = true;
-                    cmbShortcutIcon.Enabled = true;
-                    cmbMenuIcon.Enabled = true;
-                    btnRemoveTImage.Enabled = true;
-                    btnRemoveMImage.Enabled = true;
-                    if (e.Node.Parent.Tag.ToString() == "0")
-                    {
-                        chkbxSHOWTOOLBAR.Enabled = false;
-                    }
-                    else
-                    {
-                        chkbxSHOWTOOLBAR.Enabled = true;
-                    }
-                    btnDeleteNode.Enabled = true;
-                    btnCancel.Enabled = true;
-                    btnSave.Enabled = true;
-                    DataRow dr = menutbl.Rows.Find(e.Node.Tag.ToString());
-                    txtOBJECT_NAME_AR.Text = dr["OBJECT_NAME_AR"].ToString();
-                    txtOBJECT_COMMAND.Text = dr["OBJECT_COMMAND"].ToString();
-                    cmbOBJECT_TYPE.SelectedIndex = Convert.ToInt16(dr["OBJECT_TYPE"]);
-                    txtPARNT_OBJECT.Text = dr["PARNT_OBJECT"].ToString();
-                    cmbMenuIcon.SelectedIndex = Convert.ToInt16(dr["MENU_ICON"].ToString());
-                    cmbShortcutIcon.SelectedIndex = Convert.ToInt16(dr["TOOLBAR_ICON"].ToString());
-                    if (dr["SHOWTOOLBAR"].ToString() == "1")
-                    {
-                        chkbxSHOWTOOLBAR.Checked = true;
-                    }
-                    else
-                    {
-                        chkbxSHOWTOOLBAR.Checked = false;
+            
+            }
+        
 
-                    }
-                }
-             */
+            
         }
 
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            /*
-            if (txtOBJECT_NAME_AR.Text == "")
+            string[] privarr = new string[10];         
+            privarr[0] = chkboxEnable.Checked ? "1" : "0";
+            privarr[1] = chkboxInsert.Checked ? "1" : "0";
+            privarr[2] = chkboxUpdate.Checked ? "1" : "0";
+            privarr[3] = chkboxDelete.Checked ? "1" : "0";
+            privarr[4] = chkboxPrint.Checked ? "1" : "0";
+            for (int i = 5; i < 10; i++)
             {
-                MessageBox.Show("!من فضلك تأكد من إدخال إسم القائمة", "خطأ في البيانات المدخلة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                privarr[i] = "0";
             }
-            else if (txtOBJECT_COMMAND.Text == "" && cmbOBJECT_TYPE.SelectedIndex == 1)
+            objManagePrivileges.OBJECTPRIVILEGE = String.Join("",privarr);
+            if(mode == 1 )
             {
-                MessageBox.Show("!من فضلك قم بإدخال اسم الشاشة", "خطأ في البيانات المدخلة", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtOBJECT_COMMAND.Text == "" && cmbOBJECT_TYPE.SelectedIndex == 2)
-            {
-                MessageBox.Show("!من فضلك قم بإدخال اسم التقرير", "خطأ في البيانات المدخلة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    objManagePrivileges.InsertObjectPrivilege();
+                    MessageBox.Show("تم الحفظ بنجاح");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("حدث الخطأ التالي أثناء الحفظ" + "\n" + ex.ToString());
+                }
             }
             else
             {
-                DialogResult dialogresult = MessageBox.Show("هل تريد تأكيد حفظ التعديلات ؟", "تأكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogresult == DialogResult.Yes)
+                try
                 {
-                    Save();
-                    ReloadTree();
+                    objManagePrivileges.UpdateObjectPrivilege();
+                    MessageBox.Show("تم الحفظ بنجاح");
                 }
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("حدث الخطأ التالي أثناء الحفظ" + "\n" + ex.ToString());
+                   
+                }
             }
-            */
+            treeVMenus.Nodes.Clear();
+            loadParents();
+            treeVMenus.ExpandAll();
+            treeVMenus.Focus();            
+            
         }
 
 

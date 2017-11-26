@@ -87,13 +87,28 @@ namespace maarefa
             objManageMenus.OBJECTID = Convert.ToInt16(treeVMenus.SelectedNode.Tag.ToString());
             if (mode == 1)
             {
-                objManageMenus.InsertNewMenuItem();
+                try
+                {
+                    objManageMenus.InsertNewMenuItem();
+                    MessageBox.Show("تم الحفظ بنجاح");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("حدث الخطأ التالي أثناء الحفظ" + "\n" + ex.ToString());
+                }
 
             }
             else
             {
-                objManageMenus.UpdateMenuItem();
-
+                try
+                {
+                    objManageMenus.UpdateMenuItem();
+                    MessageBox.Show("تم الحفظ بنجاح");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("حدث الخطأ التالي أثناء الحفظ" + "\n" + ex.ToString());
+                }
             }
         }
         private void AddNode()

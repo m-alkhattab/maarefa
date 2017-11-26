@@ -12,9 +12,9 @@ namespace maarefa.Classes
     class clsManagePrivileges : DBHandlerSqlServer
     {
         #region Variables
-        string _ObjectNameAR, _OBJECTCOMMAND, _CREATEPC = GetLocalIPAddress(), _LUPDATEPC = GetLocalIPAddress();
-        int _OBJECTID,_OBJECTTYPE, _PARNTOBJECT, _SHOWTOOLBAR, _MENUICON, _TOOLBARICON, _CREATEUSER = 1, _LUPDATEUSER = 1, _TRANSSTATUS = 0;// _RECORDSTATUS = 0
-        DateTime _CREATETIMESTAMP = DateTime.Now, _LUPDATETIMESTAMP = DateTime.Now;
+        string _ObjectNameAR, _OBJECTCOMMAND, _OBJECTPRIVILEGE, _CREATEPC = GetLocalIPAddress(), _LUPDATEPC = GetLocalIPAddress();
+        int _OBJECTID, _ROLEID, _OBJECTTYPE, _PARNTOBJECT, _SHOWTOOLBAR, _MENUICON, _TOOLBARICON, _CREATEUSER = 1, _LUPDATEUSER = 1, _TRANSSTATUS = 0;// _RECORDSTATUS = 0
+        DateTime _CREATETIMESTAMP = DateTime.Now,_LUPDATETIMESTAMP = DateTime.Now;
         #endregion
 
         #region Properties
@@ -29,6 +29,13 @@ namespace maarefa.Classes
             get { return _OBJECTCOMMAND; }
             set { _OBJECTCOMMAND = value; }
         }
+
+        public string OBJECTPRIVILEGE
+        {
+            get { return _OBJECTPRIVILEGE; }
+            set { _OBJECTPRIVILEGE = value; }
+        }
+
         //public string CREATEPC
         //{
         //    get { return _CREATEPC; }
@@ -59,6 +66,13 @@ namespace maarefa.Classes
             get { return _OBJECTTYPE; }
             set { _OBJECTTYPE = value; }
         }
+
+        public int ROLEID
+        {
+            get { return _ROLEID; }
+            set { _ROLEID = value; }
+        }
+        
         public int PARNTOBJECT
         {
             get { return _PARNTOBJECT; }
@@ -110,21 +124,20 @@ namespace maarefa.Classes
         {
             return GetDataTable("spGetObjects");
         }
-        public void InsertNewMenuItem()
+        public DataTable GetPrivilege()
         {
-            ExecuteCommandWithoutTransaction("spInsertObject", "@ObjectNameAR", _ObjectNameAR, "@OBJECTCOMMAND", _OBJECTCOMMAND, "@OBJECTTYPE", _OBJECTTYPE, "@PARNTOBJECT", _PARNTOBJECT
-                                                               , "@SHOWTOOLBAR", _SHOWTOOLBAR, "@MENUICON", _MENUICON, "@TOOLBARICON", _TOOLBARICON, "@CREATEUSER", _CREATEUSER, "@CREATEPC", _CREATEPC, "@CREATETIMESTAMP", _CREATETIMESTAMP, "@TRANSSTATUS", _TRANSSTATUS, "@RECORDSTATUS", 0);
+            return GetDataTable("spGetPrivilege", "@OBJECTID", _OBJECTID, "@ROLEID", _ROLEID);
 
         }
-        public void UpdateMenuItem()
+        public void InsertObjectPrivilege()
         {
-            ExecuteCommandWithoutTransaction("spUpdateObject", "@OBJECTID", _OBJECTID, "@ObjectNameAR", _ObjectNameAR, "@OBJECTCOMMAND", _OBJECTCOMMAND, "@OBJECTTYPE", _OBJECTTYPE,
-                                                                "@SHOWTOOLBAR", _SHOWTOOLBAR, "@MENUICON", _MENUICON, "@TOOLBARICON", _TOOLBARICON, "@LUPDATEUSER", _LUPDATEUSER, "@LUPDATEPC", _LUPDATEPC, "@LUPDATETIMESTAMP", _LUPDATETIMESTAMP, "@TRANSSTATUS", _TRANSSTATUS, "@RECORDSTATUS", 1);
+            ExecuteCommandWithoutTransaction("spInsertObjectPrivilege", "@OBJECTID", _OBJECTID, "@ROLEID", _ROLEID, "@OBJECTPRIVILEGE", _OBJECTPRIVILEGE, "@CREATEUSER", _CREATEUSER, "@CREATEPC", _CREATEPC, "@CREATETIMESTAMP", _CREATETIMESTAMP, "@TRANSSTATUS", _TRANSSTATUS, "@RECORDSTATUS", 0);
 
         }
-        public void DeleteMenuItem()
+        public void UpdateObjectPrivilege()
         {
-            ExecuteCommandWithoutTransaction("spDeleteObject", "@OBJECTID", _OBJECTID);
+            ExecuteCommandWithoutTransaction("spUpdateObjectPrivilege", "@OBJECTID", _OBJECTID, "@ROLEID", _ROLEID, "@OBJECTPRIVILEGE", _OBJECTPRIVILEGE, "@LUPDATEUSER", _LUPDATEUSER, "@LUPDATEPC", _LUPDATEPC, "@LUPDATETIMESTAMP", _LUPDATETIMESTAMP, "@TRANSSTATUS", _TRANSSTATUS, "@RECORDSTATUS", 1);
+
         }
 
         #endregion
